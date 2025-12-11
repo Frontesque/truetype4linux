@@ -1,0 +1,3 @@
+[submodule "corefonts"]
+	path = corefonts
+	url = https://github.com/pushcx/corefonts/
