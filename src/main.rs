@@ -1,8 +1,18 @@
 #[allow(non_upper_case_globals)]
 
+const EXTRACT_DIRECTORY: &str = "./truetype4linux";
+
 mod fonts;
+mod cabextract;
+// mod os_release;
 
 fn main() {
-    println!("Extracting fonts...");
+    if cabextract::ensure() == false {
+        return println!("Please install cabextract to run truetype4linux.");
+    }
+
+    println!("Extracting executables...");
     fonts::main();
+    println!("Unpacking fonts...");
+    cabextract::extract();
 }

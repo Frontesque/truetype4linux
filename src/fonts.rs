@@ -3,6 +3,7 @@
 
 // Imports
 use std::fs::{ write, create_dir_all };
+use crate::EXTRACT_DIRECTORY;
 
 // Font Includes
 const FONT_AndaleMono:    &[u8; 198384] = include_bytes!("../corefonts/andale32.exe");
@@ -16,9 +17,6 @@ const FONT_TimesNewRoman: &[u8; 661728] = include_bytes!("../corefonts/times32.e
 const FONT_TrebuchetMS:   &[u8; 357200] = include_bytes!("../corefonts/trebuc32.exe");
 const FONT_Verdana:       &[u8; 351992] = include_bytes!("../corefonts/verdan32.exe");
 const FONT_Webdings:      &[u8; 185072] = include_bytes!("../corefonts/webdin32.exe");
-
-// Variables
-const EXTRACT_DIRECTORY: &str = "./truetype4linux";
 
 // Standardized Writeout
 fn extract_font(exe: &str, content: &[u8]) {
