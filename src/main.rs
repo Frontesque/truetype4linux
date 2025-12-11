@@ -4,6 +4,7 @@ const EXTRACT_DIRECTORY: &str = "./truetype4linux";
 
 mod fonts;
 mod cabextract;
+mod install;
 // mod os_release;
 
 fn main() {
@@ -15,4 +16,8 @@ fn main() {
     fonts::main();
     println!("Unpacking fonts...");
     cabextract::extract();
+    println!("Moving fonts...");
+    install::main();
+    println!("Installing fonts...");
+    install::refresh_font_config();
 }

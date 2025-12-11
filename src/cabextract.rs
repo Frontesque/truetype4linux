@@ -18,7 +18,7 @@ pub fn ensure() -> bool {
 }
 
 fn cleanup(file_name: &str) {
-    remove_file(format!("{}/{}", EXTRACT_DIRECTORY, file_name));
+    let _ = remove_file(format!("{}/{}", EXTRACT_DIRECTORY, file_name));
 }
 
 fn cabextract(file: &str) {
@@ -34,7 +34,7 @@ pub fn extract() {
         let file_exe = file_raw.to_string_lossy();
         println!("Unpacking... {}", file_exe);
         cabextract(&file_exe);
-        remove_file(format!("{}/{}", EXTRACT_DIRECTORY, file_exe));
+        let _ = remove_file(format!("{}/{}", EXTRACT_DIRECTORY, file_exe));
     }
     // Post-extract cleanup
     cleanup("FONTINST.EXE");
