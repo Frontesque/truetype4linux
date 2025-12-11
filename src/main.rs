@@ -20,4 +20,12 @@ fn main() {
     install::main();
     println!("Installing fonts...");
     install::refresh_font_config();
+
+    // Print End Splash
+    println!("  _   _   _  _   _ \n | |_| |_| || | | |\n | __| __| || |_| |\n | |_| |_|__   _| |\n  \\__|\\__|  |_| |_|");
+    println!("   TrueType4Linux");
+    println!("   v{}", env!("CARGO_PKG_VERSION"));
+    println!("   https://github.com/frontesque/truetype4linux");
+    println!("\nAll done!");
+
 }
