@@ -17,9 +17,15 @@ pub fn splash() {
     println!("\nAll done!");
 }
 
+
+#[cfg(target_os = "windows")]
+mod WINDOWS_extract;
 #[cfg(target_os = "windows")]
 fn main () {
+    WINDOWS_extract::main();
     splash();
+    println!("You may now close this window.");
+    std::thread::park();
 }
 
 #[cfg(target_os = "linux")]
